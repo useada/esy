@@ -14,6 +14,7 @@ let getOr: ('a, result('a, _)) => 'a;
 
 module List: {
   let map: (~f: 'a => t('b, 'err), list('a)) => t(list('b), 'err);
+  let iter: (~f: 'a => t(unit, 'err), list('a)) => t(unit, 'err);
   let foldLeft:
     (~f: ('a, 'b) => t('a, 'err), ~init: 'a, list('b)) => t('a, 'err);
 };
